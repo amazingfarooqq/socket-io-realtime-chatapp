@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Spark Talk</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    // tailwind.config = {
+    //   darkMode: ["class"],
+    // }
+  </script>
+
+</head>
+
+<body class="">
+
+  <ul class="pages">
+    <li class="chat page">
+      <div class="container mx-auto shadow-lg rounded-lg">
+        <div class="px-5 py-5 flex justify-between items-center bg-white border-b-2 h-[5rem]">
+          <div class="font-semibold text-2xl">Spark Talk</div>
+          <div class="flex gap-5">
+            <button>Log out</button>
+            <div
+              class="h-12 w-12 p-2 bg-yellow-500 rounded-full text-white font-semibold flex items-center justify-center">
+              RA
+            </div>
+
+          </div>
+        </div>
+        <div class="flex flex-row justify-between bg-white">
+          <div class="onlineuserslist flex flex-col w-1/5 border-r-2 overflow-y-auto h-[calc(100vh-5rem)]">
+            <!-- <div class="border-b-2 py-4 px-2">
+              <input type="text" placeholder="search chatting"
+                class="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full" />
+            </div> -->
+            <ul id="activeConnections" ></ul>
+          </div>
+
+          <div class='border dark:border-gray-800 flex-1 p:2 sm:px-1 justify-between flex flex-col'>
+
+
+            <ul class="messages h-[calc(100vh-10rem)]"></ul>
+
+            <div>
+              <div>
+                <button id="btnhideOnlinebar">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                  </svg>
+                </button>
+
+                <button id="btnShowOnlinebar" class="hidden">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="flex">
+                <input
+                  class="inputMessage w-full p-2 border dark:bg-[#1e272d] dark:border-gray-800  rounded-l-lg resize-none  dark:text-gray-200 "
+                  placeholder="Enter your message..." />
+                <button class="bg-purple-500 text-white p-2 rounded-r-lg" onclick="sendMessage()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="/main.js"></script>
+</body>
+
+</html>
